@@ -1,0 +1,22 @@
+# <%= form_for @user do |f| %>
+#     <% if !@user.username %>
+#     <%= f.label :username %>
+#     <%= f.text_field :username %>
+#     <% if flash[:errors] && flash[:errors]["username"]%>
+#         <p style="color:red; font-size: 14px; float:right">Username Already Taken</p>
+#     <% end %><br />
+#     <%= f.label :email %>
+#     <%= f.text_field :email %>    
+#     <% if flash[:errors] && flash[:errors]["email"]%>
+#         <p style="color:red; font-size: 14px; float:right">There is already an account with this email</p>
+#     <% end %><br />
+#     <% end %>
+#     <%= f.label :password %>
+#     <%= f.password_field :password %><br>
+#     <br>
+#     <% if flash[:errors] && flash[:errors]["password_confirmation"]%>
+#     <p style="color:red; font-size: 14px; float:right">Passwords do no not match</p>
+#         <% end %>
+#         <br/>
+#     <%= f.submit%>
+# <% end %>
