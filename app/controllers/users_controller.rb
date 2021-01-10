@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
     skip_before_action :fetch_user, only: [:new,:create]
     def index
-        @image = Cloudinary::Uploader.upload("https://res.cloudinary.com/dpjownedc/image/upload/v1610154645/njubhgvmagokcabutbgf.jpg")
+       @users = User.all
     end
 
     def show
@@ -15,7 +15,7 @@ class UsersController < ApplicationController
         @user = User.create(user_params)
         if @user.valid?
             session[:user_id] = @user.id
-            redirect_to '/users'
+            redirect_to '/images'
         else
         #     flash[:errors] = @user.errors
             redirect_to new_user_path

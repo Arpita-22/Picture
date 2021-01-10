@@ -9,7 +9,7 @@ class LoginController < ApplicationController
         @user = User.find_by(username: params[:username]) 
         if @user && @user.authenticate(params[:password])
             session[:user_id] = @user.id
-            redirect_to '/users'
+            redirect_to '/images'
         else
             flash[:message]= "User Not Found"
             redirect_to '/login/new'
