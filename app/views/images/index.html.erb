@@ -1,42 +1,43 @@
-
- 
- <div style="display: inline-block; margin-right: 150px;">
+<div style="display: inline-block; margin-right: 150px;">
+    <b>Upload images</b>
     <%= form_for @image do |f| %>
-        <ul>
-            <li>
-                <%= f.label :title %>
-                <%= f.text_field :title %>
-            </li>
-            <%= f.check_box :virtual_attribute %>
-        </ul>
-        <%= f.submit %>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+        <%= f.label :tags %>
+        <%= f.text_field :tags %> (add comma separated tag values)
+        <%= f.submit :upload%>
     <% end %>
-  </div>
-
-  <div style="display: inline-block">
-    <form class="new_image" id="new_image" action="/images" method="post">
-        <label for="title">Title</label>
-        <input type="text" name="image[title]" id="image_title">
-        <br>
-        <br>
-        <input type="file" name="fileToUpload" id="fileToUpload">
-        <br>
-        <input type="submit" name="commit" value="upload image" data-disable-with="upload image">
+</div>
+<br><br>
+<div style="display: inline-block">
+    <b>Search for images</b>
+    <form class="search" id="search" action="/images/search" method="post">
+    <label for="title">Title</label>
+    <input type="text" name="image[title]" id="image_title">
+    <label for="title">Tags</label>
+    <input type="text" name="image[tags]" id="image_tags">
+    <label for="title">Height</label>
+    <input type="text" name="image[height]" id="image_height">
+    <label for="title">Width</label>
+    <input type="text" name="image[width]" id="image_width">
+    <label for="title">Format</label>
+    <input type="text" name="image[format]" id="image_format">
+    <label for="title">Size in bytes</label>
+    <input type="text" name="image[size_in_bytes]" id="image_size">
+    <input type="submit" name="commit" value="search">
     </form>
-  </div>
+    
+</div>
 
-  <br>
-  <hr>
-  <br>
+<br> <hr> <br>
 
-  <% @image_for_user.each do |image|%>
+<% @image_for_user.each do |image|%>
     <div class="polaroid">
         <img src="<%= image.image_url %>" style="width:100%">
         <div class="container">
             <p><%= image.title %> [ <%= image.width %> x <%= image.height %>]</p>
         </div>
     </div>
-    
 <% end%>
  
 
