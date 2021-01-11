@@ -9,6 +9,8 @@ class LoginController < ApplicationController
         @user = User.find_by(username: params[:username]) 
         if @user && @user.authenticate(params[:password])
             session[:user_id] = @user.id
+            # byebug
+            #redirect_to new_image_path
             redirect_to '/images'
         else
             flash[:message]= "User Not Found"
@@ -18,7 +20,7 @@ class LoginController < ApplicationController
 
 
     def destroy
-        session.delete :user_id
+        log_out_user!
         redirect_to new_user_path
     end
 end

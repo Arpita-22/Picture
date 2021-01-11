@@ -6,3 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+user1 = User.create(username: "Graham", password: "456")
+image1 = Image.create(title: "Image1",image_url: "something.png",width: 200,height: 200,format: "png",size_in_bytes: 100,user_id: user1.id )
+

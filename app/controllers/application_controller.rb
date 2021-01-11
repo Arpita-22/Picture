@@ -15,4 +15,9 @@ class ApplicationController < ActionController::Base
         !!session[:user_id]
     end
 
+
+    def log_out_user!
+        session.delete(:user_id)
+    end 
+
 end
