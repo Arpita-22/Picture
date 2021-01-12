@@ -5,13 +5,14 @@
         <%= f.text_field :title %>
         <%= f.label :tags %>
         <%= f.text_field :tags %> (add comma separated tag values)
+        <%= f.file_field :photo %>
         <%= f.submit :upload%>
     <% end %>
 </div>
 <br><br>
 <div style="display: inline-block">
     <b>Search for images</b>
-    <form class="search" id="search" action="/images/search" method="post">
+    <form class="search" id="#{@image.id}" action="/images/search" method="get">
     <label for="title">Title</label>
     <input type="text" name="image[title]" id="image_title">
     <label for="title">Tags</label>
@@ -39,6 +40,7 @@
         </div>
     </div>
 <% end%>
+
  
 
-  
+ 

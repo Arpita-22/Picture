@@ -13,7 +13,9 @@ class Image < ApplicationRecord
     @tags = value
   end
 
-  def self.search
-  end
+  # def self.search
+  #   binding.pry
+  #   user = session[:user_id]
+  # end
 
 end
