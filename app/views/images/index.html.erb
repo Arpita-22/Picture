@@ -12,7 +12,7 @@
 <br><br>
 <div style="display: inline-block">
     <b>Search for images</b>
-    <form class="search" id="#{@image.id}" action="/images/search" method="get">
+    <form class="search" id="#{@image.id}" action="/images/show" method="get">
     <label for="title">Title</label>
     <input type="text" name="image[title]" id="image_title">
     <label for="title">Tags</label>
@@ -26,8 +26,7 @@
     <label for="title">Size in bytes</label>
     <input type="text" name="image[size_in_bytes]" id="image_size">
     <input type="submit" name="commit" value="search">
-    </form>
-    
+    </form>    
 </div>
 
 <br> <hr> <br>
