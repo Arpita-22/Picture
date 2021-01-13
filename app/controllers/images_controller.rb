@@ -34,33 +34,34 @@ class ImagesController < ApplicationController
         @user = User.find(session[:user_id])
         @image = Image.new
 
+        byebug
         tags = params[:image][:tags].split(',')
-        image_ids = Array.new
+        image_ids = '';
         for tag in tags
             tag = tag.strip
             tag_found  = Tag.where(tag: "#{tag}")
-            # if tag_found != nil
             if tag_found != nil && tag_found != []
-                image_ids.push(ImageTag.where(tag_id: "#{tag_found[0].id}")[0].image_id)
+                image_tag = ImageTag.where(tag_id: tag_found.map{|tag| tag.id})
+                image_ids = image_tag.map{|image| image.image_id}.join('|')
             end
         end
-        image_ids = image_ids.uniq
-        # for image_id in image_ids
+        
         @image_for_user =  Image.where(
             "user_id = ? AND 
+            id::TEXT similar to ? AND
             title LIKE ? AND 
             width::TEXT LIKE ? AND 
             height::TEXT LIKE ? AND 
             format LIKE ? AND 
             size_in_bytes::TEXT LIKE ?", 
                 session[:user_id],
-                # "#{image_id}",
+                image_ids.blank? ? tags.blank? ? '%': 'null' : image_ids,
                 params[:image][:title].blank? ? '%': params[:image][:title], 
                 params[:image][:width].blank? ? '%': params[:image][:width], 
                 params[:image][:height].blank? ? '%': params[:image][:height],
                 params[:image][:format].blank? ? '%': params[:image][:format],
                 params[:image][:size_in_bytes].blank? ? '%': params[:image][:size_in_bytes]);
-        # end
+        
         render :index
     end
 

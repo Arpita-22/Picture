@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Picture</title>
+    <title>Picture Uploader</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
- 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'images.css' %>
@@ -12,16 +11,18 @@
 
   <body>
     <% if @logged_in %>
-      <div style="display: inline-block; margin-right: 150px;">
+      <div style="display: inline-block; margin-right: 150px; color: #0d98ba">
         Hello, <b><%= @user.username %></b> !!!
       </div>
       <div style="display: inline-block; margin-right: 150px; float: right;">
         <%= button_to "Log out", log_out_path, method: :delete%>
       </div>
+      <div class="link">
     <%else%>
-      <%= link_to "Log in", new_login_path %> | 
+      <%= link_to "Log in", new_login_path %> |
       <%= link_to "Sign up", new_user_path %>
     <%end%>
+    </div>
     <div>
       <br><br>
       <%= yield %>

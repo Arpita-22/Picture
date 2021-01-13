@@ -13,22 +13,24 @@
 <div style="display: inline-block">
     <b>Search for images</b>
     <form class="search" id="#{@image.id}" action="/images/show" method="get">
-    <label for="title">Title</label>
-    <input type="text" name="image[title]" id="image_title">
-    <label for="title">Tags</label>
-    <input type="text" name="image[tags]" id="image_tags">
-    <label for="title">Height</label>
-    <input type="text" name="image[height]" id="image_height">
-    <label for="title">Width</label>
-    <input type="text" name="image[width]" id="image_width">
-    <label for="title">Format</label>
-    <input type="text" name="image[format]" id="image_format">
-    <label for="title">Size in bytes</label>
-    <input type="text" name="image[size_in_bytes]" id="image_size">
-    <input type="submit" name="commit" value="search">
+        <label for="title">Title</label>
+        <input type="text" name="image[title]" id="image_title">
+        <label for="title">Tags</label>
+        <input type="text" name="image[tags]" id="image_tags">
+        <label for="title">Height</label>
+        <input type="text" name="image[height]" id="image_height">
+        <label for="title">Width</label>
+        <input type="text" name="image[width]" id="image_width">
+        <label for="title">Format</label>
+        <input type="text" name="image[format]" id="image_format">
+        <label for="title">Size in bytes</label>
+        <input type="text" name="image[size_in_bytes]" id="image_size">
+        <input type="submit" name="commit" value="search">
     </form>    
 </div>
-
+<div class="index" style="margin-right: 100px; float: right">
+    <%= link_to "Show all images", '/images'%>
+</div>
 <br> <hr> <br>
 
 <% @image_for_user.each do |image|%>
@@ -41,5 +43,4 @@
 <% end%>
 
  
-
  

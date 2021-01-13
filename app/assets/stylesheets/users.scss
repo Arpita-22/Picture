@@ -1,3 +1,57 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.login{
+    width: 90%;
+    margin: auto;
+    padding: 10px;
+    font-family: Oswald, Helvetica, Arial;
+    color: #333332;
+    font-weight: 700;
+    font-size: 18px;
+    width: 320px;
+    padding: 10px;
+    border: 5px solid #5252bd;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.new-user{
+    width: 90%;
+    margin: auto;
+    padding: 10px;
+    font-family: Oswald, Helvetica, Arial;
+    color: #333332;
+    font-weight: 700;
+    font-size: 18px;
+    width: 320px;
+    padding: 10px;
+    border: 5px solid #5252bd;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+    input[type=text], select {
+        border: 1px solid grey;
+    }
+
+    input[type=password], select {
+        border: 1px solid grey;
+    }
+
+a:link, a:visited {
+    background-color: #1c0472;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 4px;
+    font-size: small;
+  }
+  
+  a:hover, a:active {
+    background-color: rgb(194, 86, 59);
+  }

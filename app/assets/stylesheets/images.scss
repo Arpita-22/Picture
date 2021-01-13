@@ -2,20 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-// img {
-//     border: 1px solid #ddd; /* Gray border */
-//     border-radius: 4px;  /* Rounded border */
-//     padding: 5px; /* Some padding */
-//     width: 150px; /* Set a small width */
-//   }
-  
-//   /* Add a hover effect (blue shadow) */
-//   img:hover {
-//     box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
-//   }
-
-  
-
 div.polaroid {
   width: 200px;
   background-color: white;
@@ -37,4 +23,18 @@ input[type=submit] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+#image_photo {
+  background-color: #1c0472;
+  color: rgb(246, 246, 248);
+  padding: 5px 5px;
+  margin-top: 10px ;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+body{
+  background-color: lavender;
 }
