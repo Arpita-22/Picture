@@ -1,0 +1,2 @@
+class ImageSimilarity < ApplicationRecord
+end

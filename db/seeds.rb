@@ -9,3 +9,6 @@
 user1 = User.create(username: "Graham", password: "456")
 image1 = Image.create(title: "Image1",image_url: "something.png",width: 200,height: 200,format: "png",size_in_bytes: 100,user_id: user1.id )
 
+image_similaritiy1 = ImageSimilarity.create(tag: "flower", similar_tag: "rose")
+image_similaritiy2 = ImageSimilarity.create(tag: "flower", similar_tag: "love")
+

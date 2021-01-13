@@ -33,14 +33,18 @@
 </div>
 <br> <hr> <br>
 
-<% @image_for_user.each do |image|%>
+<% @image_details.each do |details|%>
     <div class="polaroid">
-        <img src="<%= image.image_url %>" style="width:100%">
+        <img src="<%= details.image.image_url %>" style="width:100%">
         <div class="container">
-            <p><%= image.title %> [ <%= image.width %> x <%= image.height %>]</p>
+            <p><%= details.image.title %> [ <%= details.image.width %> x <%= details.image.height %>]</p>
+            <form class="search" id="#{@image.id}" action="/images/similar" method="get">
+                <% tags = details.tags.map{|tag_details| tag_details.tag}.join('|') %>
+                <input type="hidden" name="imageTags" value="<%=tags%>">
+                <input type="hidden" name="imageFormat" value="<%=details.image.format%>">
+                <input type="submit" name="Search similar images" value="Search similar images">
+            </form>
         </div>
     </div>
 <% end%>
-
- 
  
